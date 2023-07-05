@@ -5,6 +5,6 @@
 脚本来源https://gitee.com/xiaoqqya/
 
 2. archinit.sh
-archlinux安装后初始化，安装相关app及初始化个人配置
+archlinux安装后初始化
 
  
