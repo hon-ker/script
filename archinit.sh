@@ -52,4 +52,4 @@ sudo systemctl enable sddm
 sudo systemctl start sddm
 
 # 7.个人使用包
-sudo pacman -S v2ray nmap 
+sudo pacman -S v2ray nmap neovim 
