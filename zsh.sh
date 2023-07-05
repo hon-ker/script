@@ -31,7 +31,7 @@ EOF
 sh $HOME/.temp
 rm -rf $HOME/.temp
 
-sed -i "s/ZSH_THEME=\".*/ZSH_THEME=\"spaceship\"/g" $HOME/.zshrc
+sed -i "s/ZSH_THEME=\".*/ZSH_THEME=\"eastwood\"/g" $HOME/.zshrc
 sed -i "s/plugins=(git)/plugins=(git sudo zsh-autosuggestions zsh-syntax-highlighting conda-zsh-completion pip ufw docker docker-compose extract command-not-found)/g" $HOME/.zshrc
 
 cat <<EOF >> $HOME/.zshrc
@@ -47,6 +47,19 @@ SPACESHIP_PACKAGE_SHOW=true
 
 zstyle ':completion:*:*:docker:*' option-stacking yes
 zstyle ':completion:*:*:docker-*:*' option-stacking yes
+
+
+# PATH
+export EDITOR=nvim
+export PATH=$PATH:~/.local/bin
+
+# system
+alias ls='ls --color=auto'
+alias la='ls -la --color=auto'
+alias ll='ls -l --color=auto'
+alias grep='grep --color=auto'
+alias gdd='cd ~/Downloads'
+alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 EOF
 
 exec zsh -l
