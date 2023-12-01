@@ -49,9 +49,11 @@ zstyle ':completion:*:*:docker:*' option-stacking yes
 zstyle ':completion:*:*:docker-*:*' option-stacking yes
 
 
+
 # PATH
 export EDITOR=nvim
-export PATH=$PATH:~/.local/bin
+export TOOLS='/data/tools/'
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:~/.local/bin
 
 # system
 alias ls='ls --color=auto'
@@ -59,7 +61,16 @@ alias la='ls -la --color=auto'
 alias ll='ls -l --color=auto'
 alias grep='grep --color=auto'
 alias gdd='cd ~/Downloads'
-alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+alias r='ranger --choosedir=/home/clay/.rangerdir; LASTDIR=; cd ""'
+alias active='source /home/clay/.venv/bin/activate'
+alias t='cd /data/tools/'
+
+# 工具
+alias exiftool="$TOOLS/ExifTool/exiftool"
+alias gobuster="$TOOLS/gobuster/gobuster"
+alias dirsearch="python $TOOLS/dirsearch/dirsearch.py"
+alias sqlmap="python $TOOLS/sqlmap/sqlmap.py"
+
 EOF
 
 exec zsh -l
